@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 
 class Exercise2ViewModel extends GetxController {
+  TextEditingController numberController = TextEditingController();
   RxInt enteredNumber = 0.obs;
 
   void setEnteredNumber(String value) {

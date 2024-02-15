@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 class Exercise2 extends StatelessWidget {
   final Exercise2ViewModel viewModel = Get.put(Exercise2ViewModel());
-  TextEditingController numberController = TextEditingController();
+
   Exercise2({super.key});
 
   @override
@@ -29,7 +29,7 @@ class Exercise2 extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: TextField(
-                controller: numberController,
+                controller: viewModel.numberController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -41,7 +41,7 @@ class Exercise2 extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  viewModel.checkAndShowResult(numberController.text);
+                  viewModel.checkAndShowResult(viewModel.numberController.text);
                 },
                 child: Text('Search'),
               ),

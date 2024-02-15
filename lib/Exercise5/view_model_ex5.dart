@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 
 class ViewModelExercise5 extends GetxController {
+  TextEditingController evenOrOddController = TextEditingController();
   RxBool isPrime = false.obs;
 
   bool checkPrime(int number) {

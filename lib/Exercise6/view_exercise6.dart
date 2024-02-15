@@ -1,19 +1,18 @@
-//Ask the user for a number and determine whether the number is prime or not.
-import 'package:dart_task/Exercise5/view_model_ex5.dart';
+import 'package:dart_task/Exercise6/view_model_ex6.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Exercise5 extends StatelessWidget {
-  final ViewModelExercise5 viewModelExercise5 = Get.put(ViewModelExercise5());
+class Exercise6 extends StatelessWidget {
+  final ViewModelExercise6 viewModelExercise6 = Get.put(ViewModelExercise6());
 
-  Exercise5({super.key});
+  Exercise6({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Exercise 5'),
+        title: Text('Exercise 6'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -22,29 +21,29 @@ class Exercise5 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Enter any Number',
+              'Check the string whether palindrome or not',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 30.0),
               child: TextField(
-                controller: viewModelExercise5.evenOrOddController,
-                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    hintText: 'Enter Number',
-                    labelText: 'Number'),
+                    labelText: 'Name',
+                    hintText: 'Name'),
+                onChanged: (value) {
+                  viewModelExercise6.name.value = value;
+                },
               ),
             ),
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  int number = int.tryParse(
-                          viewModelExercise5.evenOrOddController.text) ??
-                      0;
-                  viewModelExercise5.findPrime(number);
+                  if (viewModelExercise6.name.isNotEmpty) {
+                    viewModelExercise6.checkPalindromeAndShowAlert();
+                  }
                 },
-                child: Text('Find'),
+                child: Text('Check'),
               ),
             )
           ],

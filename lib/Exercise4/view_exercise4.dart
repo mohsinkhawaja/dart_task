@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 class Exercise4 extends StatelessWidget {
   final ViewModelExercise4 viewModelExercise4 = Get.put(ViewModelExercise4());
-  TextEditingController numberController = TextEditingController();
+
   Exercise4({super.key});
 
   @override
@@ -30,7 +30,7 @@ class Exercise4 extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 30.0),
               child: TextField(
-                controller: numberController,
+                controller: viewModelExercise4.numberController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -41,8 +41,8 @@ class Exercise4 extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  viewModelExercise4
-                      .findDivisorsAndShowSnackbar(numberController.text);
+                  viewModelExercise4.findDivisorsAndShowSnackbar(
+                      viewModelExercise4.numberController.text);
                 },
                 child: Text('Search Devisior'),
               ),

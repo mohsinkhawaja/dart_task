@@ -7,9 +7,6 @@ import 'package:get/get.dart';
 class Exercise1 extends StatelessWidget {
   final UserController userController = Get.put(UserController());
 
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController ageController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +21,7 @@ class Exercise1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
-                controller: nameController,
+                controller: userController.nameController,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Enter Name',
@@ -36,7 +33,7 @@ class Exercise1 extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 30.0),
                 child: TextField(
-                  controller: ageController,
+                  controller: userController.ageController,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Enter your age',

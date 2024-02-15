@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 
 class ViewModelExercise4 extends GetxController {
+  TextEditingController numberController = TextEditingController();
   RxList<int> divisors = <int>[].obs;
 
   void findDivisors(int number) {

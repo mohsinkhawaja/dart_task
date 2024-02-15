@@ -7,6 +7,8 @@ class UserData {
 }
 
 class UserController extends GetxController {
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController ageController = TextEditingController();
   final userData = UserData().obs;
 
   void setName(String value) {
